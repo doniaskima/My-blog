@@ -1,25 +1,15 @@
-import React, { createContext } from "react";
+import React from "react"
 
-export const defaultTheme: string = "dark";
+export const defaultTheme = "dark"
 
-interface ThemeContextProps {
-  theme: string;
-  setTheme: () => void;
-}
-
-export const ThemeContext = createContext<ThemeContextProps>({
+export const ThemeProvider = React.createContext({
   theme: defaultTheme,
   setTheme: () => {},
-});
+})
 
-interface ToastContextProps {
-  jsx: JSX.Element | null;
-  setJsx: ((jsx: JSX.Element | null) => void) | null;
-}
-
-export const ToastContext = createContext<ToastContextProps>({
+export const ToastContext = React.createContext({
   jsx: null,
   setJsx: null,
-});
+})
 
-export const LanyardProvider = createContext({});
+export const LanyardProvider = React.createContext({})

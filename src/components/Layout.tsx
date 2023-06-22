@@ -3,6 +3,7 @@ import { Box, Stack, Flex, Grid } from "@chakra-ui/layout";
 import { forwardRef } from "@chakra-ui/system";
 import { transition } from "../data/theme";
 import { ToastContext } from "../data/providers";
+import Navbar from "./Navbar";
 
 export const Hr = forwardRef((props: any, ref: any) => {
   return (
@@ -59,7 +60,8 @@ export function Layout({
   return (
     <Flex flexFlow="column nowrap" p={6}>
       <ToastContext.Provider value={{ jsx: toastJsx, setJsx: setToastJsx }}>
-        <Box {...rest}>{children}</Box>
+      <Navbar />
+      {children}
       </ToastContext.Provider>
     </Flex>
   );
