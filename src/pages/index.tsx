@@ -1,12 +1,12 @@
 import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
 import { Layout, StackedSection } from "../components/Layout"
-import Navbar from "../components/Navbar"
 import Bio from "../components/Hero"
 import { ChakraProvider, Flex, Grid, extendTheme } from "@chakra-ui/react";
 import ExternalLink from "../components/ExternalLink"
 import { RiGithubFill, RiRssFill } from "react-icons/ri"
 import { SectionHeader } from "../components/SectionHeader"
+import { PostList } from "../components/PostList"
 
 const theme = extendTheme({
   fonts: {
@@ -27,6 +27,19 @@ const theme = extendTheme({
 
 
 const IndexPage: React.FC<PageProps> = () => {
+  const post = {
+    frontmatter: {
+      title: "Example Post Talking about Docker ",
+      description: "This is an example post",
+      rawDate: "2023-06-26T12:00:00Z",
+    },
+    fields: {
+      slug: "/example-post",
+      readingTime: {
+        text: "5 min read",
+      },
+    },
+  };
   return (
 <>
 
@@ -39,7 +52,6 @@ const IndexPage: React.FC<PageProps> = () => {
       gap={{ base: 6, md: 10, lg: 24 }}
     >
     <Bio/>
-
     <StackedSection gridArea="blog" flex={1} alignItems="center" >
           <Flex
             flexFlow="row"
@@ -70,13 +82,21 @@ const IndexPage: React.FC<PageProps> = () => {
               </ExternalLink>
               <RiGithubFill size={18} />
             </Flex>
-            {/* <PostSwitch /> */}
+          
           </Flex>
-          <Grid gap={10}>
-            {/* {posts.map(({ node }) => (
-              <PostList node={node} key={node.fields.slug} />
-            ))} */}
-          </Grid>
+          <Flex
+            flexFlow="column"
+            justifyContent="space-start"
+            alignItems="start"
+            width="80%"
+            mt={8}
+          >
+          <PostList node={post} date={new Date(post.frontmatter.rawDate)} />
+          <PostList node={post} date={new Date(post.frontmatter.rawDate)} />
+
+          </Flex>
+           
+       
         </StackedSection>
   </Layout>
  

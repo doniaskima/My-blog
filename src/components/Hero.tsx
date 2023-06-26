@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ExternalLink from "./ExternalLink";
 import { Flex, Heading, Link, Box, Stack, Text, Grid } from "@chakra-ui/react";
 import { RiGithubFill, RiTwitterFill } from "react-icons/ri";
 import { Donia } from "../assets";
+import LayoutEffect from "./LayoutEffect";
 
 const BioImage: React.FC = React.memo(() => (
   <Box role="group" height="min-content">
@@ -12,8 +13,7 @@ const BioImage: React.FC = React.memo(() => (
       overflow="hidden"
       maxWidth="340px"
       height="min-content"
-      borderRadius="lg"
-        borderRadius="full"
+      borderRadius="full"
     >
       <Donia />
     </Box>
@@ -73,7 +73,7 @@ const Bio: React.FC = React.memo(() => {
           color="text.100"
         >
           Hi, Im Donia.
-        </Heading>
+         </Heading>
         <Stack spacing={4} fontSize={{ base: "md", lg: "2md" }}>
           <Text>
             I love making ideas come to life with code. I'm a huge fan of
@@ -110,7 +110,8 @@ const Bio: React.FC = React.memo(() => {
       <Flex
         gridArea="avatar"
         justifyContent={{ base: "flex-start", lg: "flex-end" }}
-        marginRight={{ base: "50px", lg: "120px" }}  
+        marginRight={{ base: "50px", lg: "120px" }} 
+        marginLeft={{ base: "50px", lg: "120px", sm:"100px" }} 
       >
         <BioImage />
       </Flex>

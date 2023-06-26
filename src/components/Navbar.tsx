@@ -39,6 +39,7 @@ const LazyImage: React.FC<LazyImageProps> = ({ src, ...rest }) => {
         ref={imageRef}
         onError={() => setLoaded(false)}
         onLoad={() => setLoaded(true)}
+  
         src={src}
         {...rest}
       />
@@ -78,8 +79,9 @@ const Navbar: React.FC = () => {
                   <StaticImage
                     src="../assets/donia.jpg"
                     quality={100}
-                    height={70}
-                    width={70}
+                    height={100}
+                    width={100}
+                    style={{ borderRadius: "50%" }}
                   />
                 </Box>
             </Flex>

@@ -21,7 +21,7 @@
     "@emotion/styled": "^11.11.0",
     "@mdx-js/react": "^2.3.0",
     "autoprefixer": "^10.4.14",
-    "framer-motion": "^10.12.16",
+    "framer-motion": "^10.12.17",
     "gatsby": "^5.11.0",
     "gatsby-plugin-google-analytics": "^5.11.0",
     "gatsby-plugin-image": "^3.11.0",
@@ -38,6 +38,7 @@
     "react-headroom": "^3.2.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.10.1",
+    "react-rough-notation": "^1.0.5",
     "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
