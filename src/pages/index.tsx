@@ -1,9 +1,12 @@
 import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
-import { Layout } from "../components/Layout"
+import { Layout, StackedSection } from "../components/Layout"
 import Navbar from "../components/Navbar"
 import Bio from "../components/Hero"
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { ChakraProvider, Flex, Grid, extendTheme } from "@chakra-ui/react";
+import ExternalLink from "../components/ExternalLink"
+import { RiGithubFill, RiRssFill } from "react-icons/ri"
+import { SectionHeader } from "../components/SectionHeader"
 
 const theme = extendTheme({
   fonts: {
@@ -35,8 +38,46 @@ const IndexPage: React.FC<PageProps> = () => {
       margin={["0 auto", null, "5% auto"]}
       gap={{ base: 6, md: 10, lg: 24 }}
     >
- 
     <Bio/>
+
+    <StackedSection gridArea="blog" flex={1} alignItems="center" >
+          <Flex
+            flexFlow="row"
+            justifyContent="space-between"
+            alignItems="center"
+            width="80%"
+            mt={16}
+          >
+            <Flex alignItems="center">
+              <SectionHeader> 12 Posts</SectionHeader>
+              <ExternalLink
+                color="text.300"
+                ml={2}
+                href="/rss.xml"
+                aria-label="Go to RSS feed"
+              >
+                <RiRssFill size={15} />  
+              </ExternalLink>
+            </Flex>
+            <Flex alignItems="center">
+              <ExternalLink
+                color="text.300"
+                fontSize="xs"
+                mr={2}
+                href="https://github.com/doniaskima/My-blog"
+              >
+                View the site's code
+              </ExternalLink>
+              <RiGithubFill size={18} />
+            </Flex>
+            {/* <PostSwitch /> */}
+          </Flex>
+          <Grid gap={10}>
+            {/* {posts.map(({ node }) => (
+              <PostList node={node} key={node.fields.slug} />
+            ))} */}
+          </Grid>
+        </StackedSection>
   </Layout>
  
 </ChakraProvider>

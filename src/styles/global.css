@@ -14,3 +14,126 @@
     font-style: normal;
   }
   
+
+  .github-btn {
+    position: relative;
+    width: 130px;
+    height: 35px;
+    border-radius: 30px;
+    background-color: white;
+    border: 1px #000000 solid;
+    overflow: hidden;
+  }
+  
+  .text1 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-left: 22%;
+  }
+  
+  .text2 {
+    position: absolute;
+    top: 25%;
+    left: -50px;
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+  }
+  
+  .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s;
+  }
+  
+  .icon::before {
+    position: absolute;
+    left: -100px;
+    top: 0;
+    z-index: -1;
+    content: '';
+    width: 130px;
+    height: 33px;
+    border-radius: 30px;
+    background-color: #000000;
+  }
+  
+  .icon::after {
+    position: absolute;
+    left: 0.5px;
+    top: 0.5px;
+    z-index: -1;
+    content: '';
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    background-color: white;
+  }
+  
+  .github-btn:hover .icon {
+    transform: translateX(97.5px);
+    transition: transform 0.5s;
+  }
+  
+  .github-btn:hover .text2 {
+    transform: translateX(100px);
+    transition: transform 0.6s;
+  }
+  
+  .github-btn:active {
+    transform: scale(1.03);
+  }
+
+  /* Twitter btn */
+
+  .twitter-btn {
+    position: relative;
+    width: 130px;
+    height: 35px;
+    border-radius: 30px;
+    background-color: white;
+    border: 1px #2867b2 solid;
+    overflow: hidden;
+  }
+  
+  .text1-twitter {
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 22%;
+  }
+  
+ 
+  
+  .icon-twitter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s;
+  }
+  
+  .icon-twitter::before {
+    position: absolute;
+    left: -100px;
+    top: 0;
+    z-index: -1;
+    content: '';
+    width: 130px;
+    height: 33px;
+    border-radius: 30px;
+    background-color: #2867b2;
+  }
+  
+  .twitter-btn:hover .icon-twitter {
+    transform: translateX(96px);
+    transition: transform 0.5s;
+  }
+  
+  .twitter-btn:hover .text2 {
+    transform: translateX(100px);
+    transition: transform 0.6s;
+  }
+  
+  .twitter-btn:active {
+    transform: scale(1.03);
+  }
