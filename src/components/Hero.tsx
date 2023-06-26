@@ -40,10 +40,9 @@ const BioImage: React.FC = React.memo(() => (
 ));
 
 const Bio: React.FC = React.memo(() => {
-  const twitter = "https://twitter.com/DoniaSkima?fbclid=IwAR1FMm_RB6yrz8RqaLtL3gpcxR88a2uYbV75LlxY29IpMniAOvAnrdglmQQ"
+  const twitter = "https://twitter.com/DoniaSkima?fbclid=IwAR1FMm_RB6yrz8RqaLtL3gpcxR88a2uYbV75LlxY29IpMniAOvAnrdglmQQ";
   return (
     <Grid
-      gap={8}
       as="section"
       gridTemplateAreas={{
         base: `
@@ -57,8 +56,9 @@ const Bio: React.FC = React.memo(() => {
         lineHeight="200%"
         spacing={4}
         gridArea="bio"
-        flex={1}
+        flex={4}
         maxWidth="42rem"
+        marginLeft={{ base: "50px", lg: "120px" }}  
       >
         <Heading
           fontWeight="black"
@@ -99,6 +99,7 @@ const Bio: React.FC = React.memo(() => {
       <Flex
         gridArea="avatar"
         justifyContent={{ base: "flex-start", lg: "flex-end" }}
+        marginRight={{ base: "50px", lg: "120px" }}  
       >
         <BioImage />
       </Flex>
@@ -107,5 +108,3 @@ const Bio: React.FC = React.memo(() => {
 });
 
 export default Bio;
-
- 

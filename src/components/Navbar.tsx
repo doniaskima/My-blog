@@ -2,12 +2,10 @@ import React, { useContext, useRef, useEffect, useState } from "react";
 import { Link } from "gatsby";
 import { Box, Flex } from "@chakra-ui/layout";
 import { RiMoonLine, RiSunFoggyLine, RiSpotifyFill } from "react-icons/ri";
-import { HiMusicNote } from "react-icons/hi";
 import { transition } from "../data/theme";
-import { Text, Link as ChakraLink } from "@chakra-ui/layout";
 import { Image } from "@chakra-ui/image";
 import { Skeleton, SkeletonCircle } from "@chakra-ui/skeleton";
-import { LanyardProvider, ThemeProvider } from "../data/providers";
+import {  ThemeProvider } from "../data/providers";
 import Headroom from "react-headroom";
 import { StaticImage } from "gatsby-plugin-image";
 
@@ -50,8 +48,6 @@ const LazyImage: React.FC<LazyImageProps> = ({ src, ...rest }) => {
 
 const Navbar: React.FC = () => {
   const { theme, setTheme, toggle } = useContext(ThemeProvider);
-  const lanyard = useContext(LanyardProvider);
-
   const nav = (
     <Flex
       as="nav"
