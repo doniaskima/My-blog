@@ -7,6 +7,8 @@ import Bio from "../components/Hero";
 import ExternalLink from "../components/ExternalLink";
 import { SectionHeader } from "../components/SectionHeader";
 import { PostList } from "../components/PostList";
+import { graphql } from "gatsby"
+import MdxPost from "../components/MdxPost";
 
 const theme = extendTheme({
   fonts: {
@@ -25,7 +27,8 @@ const theme = extendTheme({
   },
 });
 
-const IndexPage: React.FC<PageProps> = () => {
+const IndexPage: React.FC<PageProps> = ({ data, pageContext }) => {
+
   const post = {
     frontmatter: {
       title: "Example Post Talking about Docker",
@@ -90,6 +93,7 @@ const IndexPage: React.FC<PageProps> = () => {
           >
             <PostList node={post} date={new Date(post.frontmatter.rawDate)} />
             <PostList node={post} date={new Date(post.frontmatter.rawDate)} />
+            <MdxPost mdxData={post} />
           </Flex>
         </StackedSection>
       </Layout>
@@ -100,3 +104,5 @@ const IndexPage: React.FC<PageProps> = () => {
 export default IndexPage;
 
 export const Head: HeadFC = () => <title>Home Page</title>;
+ 
+
